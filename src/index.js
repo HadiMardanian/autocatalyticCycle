@@ -114,21 +114,20 @@ makeProduct = ((f1, f2, c) => {
             });
             return candidates[Math.floor(Math.random() * candidates.length)]
         })();
-        console.log(node1, node2, catalic);
+
         if(!node1 || !node2 || !catalic) return null;
         if(rawNodes.includes(node1 + node2)) return null;
-        console.log('ssssssssssss');
 
         const array = [node1, node2, catalic];
         
         for(let i = 0; i < 3; i++){
             for(let j = 0; j < 3; j++){
                 for(let k = 0; k < 1; k++){
-                    if([...new Set([array[i], array[j], array[k]])].length === 3) console.log([...new Set([array[i], array[j], array[k]])]);
                     if(
                         ([...new Set([array[i], array[j], array[k]])].length < 3) || 
                         rawNodes.includes(array[i] + array[j])
                     ) continue;
+
                     makeProduct(
                         getFood(array[i]),
                         getFood(array[j]),
@@ -141,20 +140,5 @@ makeProduct = ((f1, f2, c) => {
         makeProduct(getFood(node2), getFood(node1), getFood(catalic));
 	});
 
-// makeProduct(getFood("A"), getFood("B"), getFood("C"));
-// makeProduct(getFood("B"), getFood("A"), getFood("C"));
-// makeProduct(getFood("B"), getFood("C"), getFood("A"));
-// makeProduct(getFood("AB"), getFood("A"), getFood("A"));
-// makeProduct(getFood("BA"), getFood("C"), getFood("A"));
-// makeProduct(getFood("BA"), getFood("AB"), getFood("ABA"));
-// console.log(relatedNodes());
-
 let result = true;
-for(let i = 1; i <= 2; i++){
-    build();
-    console.log(relatedNodes());
-}
-// makeProduct(getFood('AB'), getFood('A'))
-// makeProduct(getFood('AB'), getFood('B'))
-// makeProduct(getFood('ABA'), getFood('AB'))
-// console.log(getFood('AB').x, getFood('AB').y)
+for(let i = 1; i <= 2; i++) build();
