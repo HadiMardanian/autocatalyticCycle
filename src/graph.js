@@ -3,7 +3,7 @@ const data = {
     nodes: [
         {
             id: "A",
-            x: 100 + 60 ,
+            x: 1000 + 60 ,
             y: 200 + 60,
             label: "A",
             type: "food",
@@ -17,7 +17,7 @@ const data = {
         {
             id: "B",
             type: 'food',
-            x: 500 + 60,
+            x: 1500 + 60,
             y: 200 + 60,
             label: "B",
             style: {
@@ -29,7 +29,7 @@ const data = {
         {
             id: "C",
             type: 'food',
-            x: 700 + 60,
+            x: 2000 + 60,
             y: 200 + 60,
             label: "C",
             style: {
@@ -37,7 +37,7 @@ const data = {
                 lineWidth: 2,
                 radius: 7,
             },
-        },
+        }
     ],
 
     edges: [],
